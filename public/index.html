@@ -129,11 +129,18 @@ async function crearCita() {
   const resultado = await respuesta.json();
 
   const mensaje = document.getElementById("mensaje");
-  if (respuesta.ok) {
-    mensaje.className = "ok";
-    mensaje.textContent = "El servidor aceptó la cita (id " + resultado.id + ")";
-    cargarCitas(); // refrescar la lista con la verdad del servidor
-  } else {
+if (respuesta.ok) {
+  const prof = document.getElementById("profesional");
+  mensaje.className = "ok";
+  mensaje.innerHTML = `
+    <strong>✓ Cita confirmada</strong> (código ${resultado.id})<br>
+    Paciente: ${datos.paciente}<br>
+    Profesional: ${prof.options[prof.selectedIndex].text}<br>
+    Fecha: ${new Date(datos.fecha_hora).toLocaleString("es-CO")}`;
+  document.getElementById("paciente").value = "";  // limpiar el formulario
+  document.getElementById("fecha").value = "";
+  cargarCitas();
+}else {
     mensaje.className = "error";
     mensaje.textContent = "El servidor la rechazó: " + resultado.error;
   }
