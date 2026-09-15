@@ -31,7 +31,8 @@ const pool = new Pool({
 const app = express();
 app.use(cors());            // habilita CORS: el cliente puede vivir en otro dominio
 app.use(express.json());    // permite leer el JSON que envían los clientes en POST
-app.use(express.static(path.join(__dirname, 'public'))); // sirve el cliente web
+// sirve el cliente web y resuelve /nombre como /nombre.html automáticamente
+app.use(express.static(path.join(__dirname, 'public'), { extensions: ['html'] })); 
 
 // ============================================================================
 // ENDPOINTS: las "operaciones" que el servidor expone a los clientes.
