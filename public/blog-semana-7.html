@@ -181,7 +181,7 @@
 </ol>
 <p>Todo el procedimiento usa los planes gratuitos de los tres servicios y no requiere tarjeta de crédito. El flujo principal se realiza completo desde el navegador; no es necesario instalar programas.</p>
 
-<h2>3. Paso 1 — Crear la base de datos en Supabase</h2>
+<h2>3. Paso 1. Crear la base de datos en Supabase</h2>
 
 <h3>3.1 Crear el proyecto</h3>
 <ol>
@@ -219,7 +219,7 @@
 <div class="aviso"><strong>Advertencia:</strong> no se debe usar la opción <em>Direct connection</em>. Esa conexión usa IPv6 y falla desde el plan gratuito de Render. La cadena correcta es siempre la del <em>Transaction pooler</em>.</div>
 <div class="clave"><strong>Seguridad:</strong> la cadena completa contiene la contraseña de la base de datos. No debe subirse a GitHub ni compartirse; solo se pega en la configuración de Render.</div>
 
-<h2>4. Paso 2 — Subir el código a GitHub</h2>
+<h2>4. Paso 2. Subir el código a GitHub</h2>
 <ol>
   <li>En github.com se presiona el botón <strong>+</strong> (esquina superior derecha) y luego <strong>New repository</strong>.</li>
   <li><strong>Repository name:</strong> <code>demo-citas</code> (nombre libre). Se deja <strong>Public</strong> y se presiona <strong>Create repository</strong>.</li>
@@ -235,7 +235,7 @@
 </ol>
 <div class="aviso"><strong>No se deben subir:</strong> el archivo <code>.env</code> (si se creó localmente, contiene la contraseña) ni la carpeta <code>node_modules</code> (miles de archivos de librerías que Render reinstala solo con <code>npm install</code>).</div>
 
-<h2>5. Paso 3 — Desplegar el servidor en Render</h2>
+<h2>5. Paso 3. Desplegar el servidor en Render</h2>
 <ol>
   <li>Se ingresa a render.com y se inicia sesión con GitHub.</li>
   <li>Se presiona <strong>New +</strong> → <strong>Web Service</strong>.</li>
